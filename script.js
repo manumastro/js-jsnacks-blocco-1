@@ -1,28 +1,34 @@
 /*
- JSnack 1
- L’utente inserisce due numeri in successione, con due prompt. Il software stampa il maggiore
+ JSnack 2
+ L’utente inserisce due parole in successione, con due prompt.
+ Il software stampa prima la parola più corta, poi la parola più lunga.
 */
-const output = document.getElementById('output'); 
 
-let num1 = parseInt(prompt("Inserisci il primo numero"));
-while(isNaN(num1)){
-  alert("Inserire un numero");
-  num1 = parseInt(prompt("Inserisci il primo numero"));
+const output1 = document.getElementById("output1");
+const output2 = document.getElementById("output2");
+
+let word1, word2;
+word1 = prompt("Inserire la prima parola");
+while(!isNaN(word1)){
+  alert ("Inserire una parola")
+  word1 = prompt("Inserire la prima parola");
 }
-let num2 = parseInt(prompt("Inserisci il secondo numero"));
-while(isNaN(num2)){
-  alert("Inserire un numero");
-  num2 = parseInt(prompt("Inserisci il secondo numero"));
+word2 = prompt("Inserire la seconda parola");
+while(!isNaN(word2)){
+  alert ("Inserire una parola")
+  word2 = prompt("Inserire la seconda parola");
 }
 
-
-
-if(num1 > num2){
-  output.innerHTML = "Il numero maggiore è " + num1;
+if(word1.length > word2.length){
+  output1.innerHTML = word2;
+  output2.innerHTML = word1;
+  console.log(output1, output2);
 }
-else if(num2 > num1){
-  output.innerHTML = "Il numero maggiore è " + num2;
+else if(word1.length < word2.length){
+  output1.innerHTML = word1;
+  output2.innerHTML = word2;
+  console.log(output1, output2);
 }
 else{
-  output.innerHTML = "I numeri sono uguali";
+  output1.innerHTML = "Le parole hanno la stessa lunghezza";
 }
