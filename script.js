@@ -1,34 +1,34 @@
 /*
- JSnack 2
- L’utente inserisce due parole in successione, con due prompt.
- Il software stampa prima la parola più corta, poi la parola più lunga.
+ JSnack 3
+ Il software deve chiedere per 5 volte all’utente di inserire un numero.
+ Il programma stampa la somma di tutti i numeri inseriti.
+ Esegui questo programma in due versioni, con il for e con il while (facoltativo)
 */
 
-const output1 = document.getElementById("output1");
-const output2 = document.getElementById("output2");
 
-let word1, word2;
-word1 = prompt("Inserire la prima parola");
-while(!isNaN(word1)){
-  alert ("Inserire una parola")
-  word1 = prompt("Inserire la prima parola");
-}
-word2 = prompt("Inserire la seconda parola");
-while(!isNaN(word2)){
-  alert ("Inserire una parola")
-  word2 = prompt("Inserire la seconda parola");
+// con ciclo for
+let somma = 0;
+const array1 = [];
+
+const output = document.getElementById("output");
+ 
+for(let i = 0; i < 5; i++){
+  array1[i] = parseInt(prompt("For----Inserire un numero"));
+  somma = somma + array1[i];  
 }
 
-if(word1.length > word2.length){
-  output1.innerHTML = word2;
-  output2.innerHTML = word1;
-  console.log(output1, output2);
+output.innerHTML = "La somma dei numeri è : " + somma;
+
+
+
+// con ciclo while
+somma = 0;
+array1.length = 0;
+
+let c = 0;
+while(c < 5){
+  array1[c] = parseInt(prompt("While----Inserire un numero"));
+  somma = somma + array1[c];  
+  c++;
 }
-else if(word1.length < word2.length){
-  output1.innerHTML = word1;
-  output2.innerHTML = word2;
-  console.log(output1, output2);
-}
-else{
-  output1.innerHTML = "Le parole hanno la stessa lunghezza";
-}
+output.innerHTML = "La somma dei numeri è : " + somma;
