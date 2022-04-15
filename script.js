@@ -1,34 +1,25 @@
 /*
- JSnack 3
- Il software deve chiedere per 5 volte all’utente di inserire un numero.
- Il programma stampa la somma di tutti i numeri inseriti.
- Esegui questo programma in due versioni, con il for e con il while (facoltativo)
+ JSnack 4
+ In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
+ chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
 */
 
+const invitati = ["Mario Rossi", "Giovanni Bianchi", "Giuseppe Verdi"];
+const output = document.querySelector("#output");
 
-// con ciclo for
-let somma = 0;
-const array1 = [];
+let invitato = prompt("Inserisci il tuo nome e cognome");
 
-const output = document.getElementById("output");
- 
-for(let i = 0; i < 5; i++){
-  array1[i] = parseInt(prompt("For----Inserire un numero"));
-  somma = somma + array1[i];  
+let check = false;
+
+for(let i = 0; i < invitati.length; i++){
+  if(invitato.toLowerCase() === invitati[i].toLowerCase() || invitato === invitati[i]){
+    check = true;
+  }
+  console.log("----------------", check);
 }
 
-output.innerHTML = "La somma dei numeri è : " + somma;
-
-
-
-// con ciclo while
-somma = 0;
-array1.length = 0;
-
-let c = 0;
-while(c < 5){
-  array1[c] = parseInt(prompt("While----Inserire un numero"));
-  somma = somma + array1[c];  
-  c++;
+if(check){
+  output.innerHTML = "Puoi partecipare";
 }
-output.innerHTML = "La somma dei numeri è : " + somma;
+else{
+  output.innerHTML = "Non sei stato invitato";}
