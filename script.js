@@ -1,25 +1,19 @@
 /*
- JSnack 4
- In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby,
- chiedi all’utente il suo nome e comunicagli se può partecipare o no alla festa.
+ JSnack 5
+ Crea un array vuoto.
+ Chiedi per 6 volte all’utente di inserire un numero,
+ se è dispari inseriscilo nell’array
 */
 
-const invitati = ["Mario Rossi", "Giovanni Bianchi", "Giuseppe Verdi"];
-const output = document.querySelector("#output");
 
-let invitato = prompt("Inserisci il tuo nome e cognome");
+let numbers = [], num;
+const output = document.getElementById("output");
 
-let check = false;
-
-for(let i = 0; i < invitati.length; i++){
-  if(invitato.toLowerCase() === invitati[i].toLowerCase() || invitato === invitati[i]){
-    check = true;
+for(let i = 0; i < 6; i++){
+  num = parseInt(prompt("Inserire un numero"));
+  if(num % 2 !== 0){
+    numbers.push(num);
   }
-  console.log("----------------", check);
 }
-
-if(check){
-  output.innerHTML = "Puoi partecipare";
-}
-else{
-  output.innerHTML = "Non sei stato invitato";}
+console.log(numbers);
+output.innerHTML = `${numbers}`
